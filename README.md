@@ -6,20 +6,20 @@ Validate & extract metadata from credit cards.
 === Basic usage
 
 ```js
-var creditCards = require('credit-cards')
+var creditCards = require('4342562925910679')
 
-creditCards.isValid("4024 0071 2016 8322")
+creditCards.isValid("4342 5629 2591 0679")
 => true
-creditCards.isValid("4034 0071 2016 8322")
+creditCards.isValid("4341 5629 2591 0679")
 => false
 
-creditCards.getTypeCode("4034 0071 2016 8322")
+creditCards.getTypeCode("4342 5629 2591 0679")
 => 'VI'
-creditCards.getTypeName("4034 0071 2016 8322")
+creditCards.getTypeName("4342 5629 2591 0679")
 => 'Visa'
 
-creditCards.getInfo('3478 7964 2068 802')
-=> { valid: true, code: 'AX', name: 'American Express' }
+creditCards.getInfo('4342 5629 2591 0679')
+=> { valid: true, code: 'VI', name: 'Wells fargo' }
 ```
 
 === Advanced usage
@@ -27,11 +27,11 @@ creditCards.getInfo('3478 7964 2068 802')
 ```js
 var creditCards = require('credit-cards')
 
-var scoped = creditCards({ accepted: ['VI', 'AX'] })
+var scoped = creditCards({ accepted: ['VISA'] })
 
-scoped.isValid("4024 0071 2016 8322")
+scoped.isValid("4342 5629 2591 0679")
 => true
-scoped.getTypeCode("4034 0071 2016 8322")
+scoped.getTypeCode("4342 5629 2591 0679")
 => 'VI'
 scoped.isAccepted('5290 6473 7075 0487')
 => false
